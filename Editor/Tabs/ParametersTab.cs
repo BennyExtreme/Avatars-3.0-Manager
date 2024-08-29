@@ -147,7 +147,7 @@ namespace VRLabs.AV3Manager
                     totalCost = paramsCost;
                 }
 
-                copyParametersButton.SetEnabled(totalCost <= VRCExpressionParameters.MAX_PARAMETER_COST);
+                copyParametersButton.SetEnabled(true);
                 UpdateAdditionalCostLabel(paramsCost, totalCost);
             });
 
@@ -268,7 +268,7 @@ namespace VRLabs.AV3Manager
             _additionalCostLabel.text = $"Additional cost: {additionalCost}";
             _additionalCostLabel.text += $"\nTotal cost after update: {totalCost}/{VRCExpressionParameters.MAX_PARAMETER_COST}";
             if(totalCost > VRCExpressionParameters.MAX_PARAMETER_COST)
-                _additionalCostLabel.text += "\nCan't merge, the cost surpasses the maximum.";
+                _additionalCostLabel.text += "\nThe cost surpasses the maximum.";
             _additionalCostLabel.RemoveFromClassList("hidden");
         }
     }
